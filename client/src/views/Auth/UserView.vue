@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { useAuthStore } from '../../stores/auth';
+import { computed, onMounted, ref } from 'vue';
+import { useAuthStore, type User } from '../../stores/auth';
 
 const authStore = useAuthStore();
 onMounted(()=>{
   getUserData();
 })
+const user = computed(()=>{
+  console.log(user.value)
+  return authStore.userDetail
+})
+const user1 = ref({} as User)
 const getUserData = async()=>{
     try{
     //     axios.post('http://localhost:3500/api/auth/login', {
@@ -15,6 +20,7 @@ const getUserData = async()=>{
     const res = await authStore.getUser()
     if (res){
       console.log(res)
+      user1.value = res
     }
     // router.replace('user')
     }
@@ -27,8 +33,8 @@ const getUserData = async()=>{
 
 <template>
   <div>
-Username: xx <br>
-Email: xx
+Username: {{user1.username}} <br>
+Email: {{user1.email}}
   </div>
 </template>
 
