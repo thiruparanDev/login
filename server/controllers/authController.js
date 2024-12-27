@@ -60,6 +60,7 @@ async function login(req, res){
 }
 
 async function logout(req, res){
+    console.log('logout')
     const cookies = req.cookies
 
     if(!cookies.refresh_token) return res.sendStatus(204)
