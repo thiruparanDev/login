@@ -30,14 +30,18 @@ const login = async()=>{
 </script>
 
 <template>
-  <div>
-    <div>
+  <div class="container text-center">
+    <div class="row row-cols-3">
+    <div class="col">
         email:
-        <input type="text" name="" id="" v-model = "loginData.email">
     </div>
-    <div>
-        password:
-        <input type="text" name="" id="" v-model = "loginData.password">
+        <input type="text" name="" id="" v-model = "loginData.email" class="col">
+    </div>
+    <div class="row row-cols-3">
+        <div class="col">
+            password:
+        </div>
+        <input type="text" name="" id="" v-model = "loginData.password" class="col">
     </div>
     <button @click="login">Login</button>
   </div>

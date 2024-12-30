@@ -32,7 +32,7 @@ const getUserData = async()=>{
 </script>
 
 <template>
-  <div>
+  <div class="container text-center">
 Username: {{user1.username}} <br>
 Email: {{user1.email}}
   </div>

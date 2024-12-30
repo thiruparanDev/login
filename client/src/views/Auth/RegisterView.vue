@@ -44,34 +44,47 @@ const register = async()=>{
 </script>
 
 <template>
-  <div>
-    {errorMessage}
-    <div>
+  <div class="container text-center">
+    <!-- {errorMessage} -->
+    <div class="row row-cols-3">
+    <div class="col">
         Username:
-        <input type="text" name="" id="" v-model = "registerData.username">
     </div>
-    <div>
+    <input type="text" name="" id="" v-model = "registerData.username" class="col">
+</div>
+    <div class="row row-cols-3">
+        <div class="col">
         email:
-        <input type="text" name="" id="" v-model = "registerData.email">
+        </div>
+        <input type="text" name="" id="" v-model = "registerData.email" class="col">
     </div>
-    <div>
-        password:
-        <input type="text" name="" id="" v-model = "registerData.password">
+    <div class="row row-cols-3">
+        <div class="col">
+            password:
+        </div>
+        <input type="text" name="" id="" v-model = "registerData.password" class="col">
     </div>
-    <div>
-        confirm password:
-        <input type="text" name="" id="" v-model = "registerData.password_confirm">
+    <div class="row row-cols-3">
+        <div class="col">
+            confirm password:
+        </div>
+        <input type="text" name="" id="" v-model = "registerData.password_confirm" class="col">
     </div>
-    <div>
-        first name:
-        <input type="text" name="" id="" v-model = "registerData.first_name">
+    <div class="row row-cols-3">
+        <div class="col">
+            first name:
+        </div>
+        <input type="text" name="" id="" v-model = "registerData.first_name" class="col">
     </div>
-    <div>
-        last name:
-        <input type="text" name="" id="" v-model = "registerData.last_name">
+    <div class="row row-cols-3">
+        <div class="col">
+            last name:
+        </div>
+        <input type="text" name="" id="" v-model = "registerData.last_name" class="col">
     </div>
     <button @click="register">Register</button>
-  </div>
+  <!-- </div> -->
+</div>
 </template>
 
 <style scoped>
