@@ -43,6 +43,8 @@ app.use(errorHandlerMiddleware)
 
 // Routes
 app.use('/api/auth', require('./routes/api/auth'))
+// app.use('/api/auth', require('./routes/api/auth'))
+app.use('/api/bucketListItems', require('./routes/api/bucketListItems'))
 
 app.all('*', (req, res) => {
   res.status(404)

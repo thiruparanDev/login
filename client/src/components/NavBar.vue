@@ -10,10 +10,10 @@ const logout = ()=>{
   authStore.logout()
   router.replace('login')
 }
-const click = ()=>{
-  console.log(authenticated.value)
-  console.log(authStore.userDetail)
-}
+// const click = ()=>{
+//   console.log(authenticated.value)
+//   console.log(authStore.userDetail)
+// }
 const authenticated = computed(()=>authStore.isAuthenticated)
 </script>
 
@@ -21,7 +21,7 @@ const authenticated = computed(()=>authStore.isAuthenticated)
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <router-link class="navbar-brand" to="/">Home</router-link>
-    <button @click="click"></button>
+    <!-- <button @click="click"></button> -->
     <div v-if="!authenticated">
         <router-link class="navbar-brand" to="/register">Register</router-link>
         <router-link class="navbar-brand" to="/login">Login</router-link>
