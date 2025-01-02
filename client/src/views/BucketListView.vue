@@ -66,36 +66,50 @@ const editItem = async(id)=>{
       </nav>
     </div>
   </header> -->
-  <div>
-    <div class="control is-expanded">
-      <input class="input" v-model="description" type="text" name="" id="">
+  <div class="row justify-content-center align-items-center">
+    <div class="center">
+      <input v-model="description" type="text" name="" id="">
     </div>
-    <div class="control">
-      <a class="button is-info" @click="addItem" :disable="!description">Add</a>
+    <div class="center">
+      <button @click="addItem" :disable="!description">Add</button>
     </div>
-    <div class="notification" v-for="(item,i) in items" :key="item">
+    <div v-for="(item,i) in items" :key="item" class="center">
       <p v-if="item._id === selected">
-        <span class="tag is-primary">
+        <span>
           {{i+1}}
         </span>
         <input type="text" v-model="editedDescription">
-        <a class="button" @click="cancel()">X</a>
-        <a class="button" @click="editItem(item?._id)">Ok</a>
+        <button  @click="cancel()">X</button>
+        <button  @click="editItem(item?._id)">Ok</button>
       </p>
       <p v-else>
         <span class="tag is-primary">
-          {{i+1}}
+          <!-- {{i+1}} -->
+           *
         </span>
         {{item?.description}}
-        <a class="button" @click="deleteItem(item?._id)">Delete</a>
-        <a class="button" @click="selectItem(item?._id,item.description)">Select</a>
+        <button  @click="deleteItem(item?._id)">Delete</button>
+        <button  @click="selectItem(item?._id,item.description)">Select</button>
       </p>
     </div>
 </div>
 </template>
 
 <style scoped>
-header {
+.center {
+display: flex;
+flex-wrap: wrap;
+align-content: center;
+justify-content: center;
+}
+.BuckContainer {
+  /* border: 0.05em solid red; */
+  margin: auto;
+  max-width: 200px
+  /* display: flex; */
+  /* justify-content: center; */
+}
+/* header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -155,5 +169,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
